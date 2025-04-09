@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Mega Menu</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar container */
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        /* Navbar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        /* Mega Menu container */
+        .navbar .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .navbar .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 800px;
+            padding: 20px;
+            left: 0;
+            top: 100%;
+            z-index: 1;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            grid-template-columns: repeat(4, 1fr);
+            display: grid;
+        }
+
+        .navbar .dropdown:hover .dropdown-content {
+            display: grid;
+        }
+
+        .dropdown-content .category {
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            margin-bottom: 5px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #575757;
+        }
+
+        /* Make the mega menu responsive */
+        @media (max-width: 768px) {
+            .navbar a {
+                display: block;
+                text-align: left;
+                padding: 10px 15px;
+            }
+
+            .navbar .dropdown-content {
+                min-width: 100%;
+                padding: 10px;
+                display: block; /* Ensure content is displayed as a block */
+            }
+
+            .dropdown-content {
+                grid-template-columns: 1fr;
+            }
+
+            /* Adjust the dropdown button style on smaller screens */
+            .navbar .dropdown a {
+                text-align: left;
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with Mega Menu -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+
+        <!-- Mega Menu Dropdown -->
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Products</a>
+            <div class="dropdown-content">
+                <div class="category">
+                    <h3>Men's Apparel</h3>
+                    <a href="#">Leather Jackets</a>
+                    <a href="#">Winter Coats</a>
+                    <a href="#">Puffer Jackets</a>
+                    <a href="#">Varsity Jackets</a>
+                </div>
+                <div class="category">
+                    <h3>Women's Apparel</h3>
+                    <a href="#">Leather Jackets</a>
+                    <a href="#">Blazers</a>
+                    <a href="#">Coats</a>
+                    <a href="#">Sweaters</a>
+                </div>
+                <div class="category">
+                    <h3>Accessories</h3>
+                    <a href="#">Hats</a>
+                    <a href="#">Bags</a>
+                    <a href="#">Belts</a>
+                    <a href="#">Scarves</a>
+                </div>
+                <div class="category">
+                    <h3>Sale</h3>
+                    <a href="#">Discounted Jackets</a>
+                    <a href="#">Clearance Coats</a>
+                    <a href="#">Accessories Sale</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
